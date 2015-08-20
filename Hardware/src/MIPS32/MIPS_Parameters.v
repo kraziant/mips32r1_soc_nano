@@ -33,7 +33,7 @@
      Current Setup:
         General exceptions go to 0x0. Interrupts go to 0x8. Booting starts at 0x10.
 */   
-parameter [31:0] EXC_Vector_Base_Reset          = 32'h0000_0010;    // MIPS Standard is 0xBFC0_0000
+parameter [31:0] EXC_Vector_Base_Reset          = 32'h1fc0_0000;    // MIPS Standard is 0xBFC0_0000
 parameter [31:0] EXC_Vector_Base_Other_NoBoot   = 32'h0000_0000;    // MIPS Standard is 0x8000_0000
 parameter [31:0] EXC_Vector_Base_Other_Boot     = 32'h0000_0000;    // MIPS Standard is 0xBFC0_0200
 parameter [31:0] EXC_Vector_Offset_General      = 32'h0000_0000;    // MIPS Standard is 0x0000_0180
