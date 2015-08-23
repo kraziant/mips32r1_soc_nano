@@ -42,11 +42,10 @@ sed "s|TODO_INIT_FILE_STRING_TODO|$PATH_BACK$SOURCE_PATH/BRAM/Memory_Contents.mi
 # Create the project
 mkdir -p $PROJECT_PATH
 cd $PROJECT_PATH
-quartus_sh -t "$PATH_BACK$SETTINGS_SCRIPT" "$PROJECT_NAME" "$PATH_BACK$SOURCE_PATH"
+/home/altera/15.0/quartus/bin/quartus_sh -t "$PATH_BACK$SETTINGS_SCRIPT" "$PROJECT_NAME" "$PATH_BACK$SOURCE_PATH"
 cd $PATH_BACK
 
 # Create the Makefile
 sed -e "s|TODO_PROJECT_TODO|$PROJECT_NAME|g" \
     -e "s|TODO_SOURCES_TODO|$PATH_BACK$SOURCE_PATH|g" \
     $MAKEFILE_TEMPLATE > $PROJECT_PATH/Makefile
-

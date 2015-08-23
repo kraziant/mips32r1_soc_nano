@@ -137,7 +137,7 @@ module MemControl(
     
     // Write-Enable Signals to Memory
     always @(*) begin
-        if (WriteCondition & ~RW_Mask) begin
+        if (ReadEnable | (WriteCondition & ~RW_Mask)) begin
             if (Byte) begin
                 WriteEnable[3] <= Byte_Access_LL;
                 WriteEnable[2] <= Byte_Access_LM;

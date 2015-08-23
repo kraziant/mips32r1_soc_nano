@@ -1,7 +1,24 @@
 #!/bin/sh -e
 
-iverilog -I MIPS32 \
+
+iverilog \
+	-g2001 \
+	-I MIPS32 \
+	-I uart16550-1.5 \
 	Top3.v \
+	rom.v \
+	wb_ram.v \
+	uart16550-1.5/uart_defines.v \
+	uart16550-1.5/raminfr.v \
+	uart16550-1.5/uart_sync_flops.v \
+	uart16550-1.5/uart_regs.v \
+	uart16550-1.5/uart_wb.v \
+	uart16550-1.5/uart_debug_if.v \
+	uart16550-1.5/uart_receiver.v \
+	uart16550-1.5/uart_top.v \
+	uart16550-1.5/uart_rfifo.v \
+	uart16550-1.5/uart_tfifo.v \
+	uart16550-1.5/uart_transmitter.v \
 	MIPS32/Add.v \
 	MIPS32/ALU.v \
 	MIPS32/Compare.v \
