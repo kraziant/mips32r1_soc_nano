@@ -5,7 +5,15 @@ iverilog \
 	-g2001 \
 	-I MIPS32 \
 	-I uart16550-1.5 \
+	-DPRESCALER_PRESET_HARD \
+	-DPRESCALER_HIGH_PRESET=0 \
+	-DPRESCALER_LOW_PRESET=2 \
+	-I verilog_utils \
+	-I wb_intercon \
 	Top3.v \
+	wb_intercon/rtl/verilog/wb_mux.v \
+	wb_intercon/rtl/verilog/wb_data_resize.v \
+	wb_intercon/wb_intercon.v \
 	rom.v \
 	wb_ram.v \
 	uart16550-1.5/uart_defines.v \

@@ -52,7 +52,7 @@ module rom #(
 reg [ADDR_WIDTH-1:0]	adr;
 
 reg [31:0] mem[0:512];
-initial $readmemh("barebox.hex", mem);
+initial $readmemh("nmon.be.10MHz.9600.txt", mem);
 
 always @ (posedge wb_clk or posedge wb_rst)
 if (wb_rst)

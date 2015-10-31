@@ -1,37 +1,36 @@
 [*]
 [*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
-[*] Thu Oct 29 09:33:38 2015
+[*] Sat Oct 31 20:08:52 2015
 [*]
 [dumpfile] "/home/antony/FPGA/trends/MIPS32R1/mips32r1_soc_nano/Hardware/src/Top.vcd"
-[dumpfile_mtime] "Thu Oct 29 09:33:04 2015"
-[dumpfile_size] 5594705
+[dumpfile_mtime] "Sat Oct 31 20:01:07 2015"
+[dumpfile_size] 627649
 [savefile] "/home/antony/FPGA/trends/MIPS32R1/mips32r1_soc_nano/Hardware/src/top.gtkw"
 [timestart] 0
 [size] 1366 768
 [pos] -1 -1
-*-17.000000 1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-21.000000 66000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] Top.
-[treeopen] Top.cpu.
-[treeopen] Top.cpu.mips32r1_wb.
+[treeopen] Top.soc.
+[treeopen] Top.soc.wb_intercon0.
 [sst_width] 210
-[signals_width] 254
+[signals_width] 246
 [sst_expanded] 1
 [sst_vpaned_height] 214
 @28
-Top.cpu.clock
-Top.cpu.clock2x
-Top.cpu.clock_50MHz
-Top.cpu.reset
-Top.cpu.reset_n
-Top.cpu.mips32r1_wb.MIPS32.InstMem_Ack
+Top.soc.wb_clk
+Top.soc.reset
 @22
-Top.cpu.mips32r1_wb.MIPS32.InstMem_Address[29:0]
-Top.cpu.mips32r1_wb.MIPS32.InstMem_In[31:0]
+Top.soc.mips32r1_wb.MIPS32.Instruction[31:0]
+Top.soc.mips32r1_wb.Handy_Instr_Address[31:0]
+Top.soc.mips32r1_wb.ibus_bridge.wb_dat_i[31:0]
+Top.soc.wb_m2s_mips32r1_d_adr[31:0]
 @28
-Top.cpu.mips32r1_wb.MIPS32.InstMem_Read
+Top.soc.wb_m2s_mips32r1_d_cyc
+Top.soc.wb_m2s_mips32r1_d_we
 @22
-Top.cpu.mips32r1_wb.MIPS32.Instruction[31:0]
-@23
-Top.cpu.mips32r1_wb.Handy_Instr_Address[31:0]
+Top.soc.wb_m2s_mips32r1_d_dat[31:0]
+@28
+Top.soc.uart16550.stx_pad_o
 [pattern_trace] 1
 [pattern_trace] 0

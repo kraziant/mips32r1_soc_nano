@@ -1,40 +1,5 @@
 `timescale 1ns / 1ps
 
-module PLL_50MHz_to_50MHz_100MHz(
-	input areset,
-	input inclk0,
-	output c0,
-	output c1,
-	output locked
-);
-
-	reg c0;
-	wire c1;
-	reg locked;
-
-	assign c1 = areset ? 1'b0 : inclk0;
-
-	always @(posedge inclk0)
-	begin
-		if (areset)
-			c0 = 0;
-		else
-			c0 <= !c0;
-	end
-
-	always @areset
-		if (areset)
-		begin
-			c0 = 0;
-			locked = 0;
-		end
-		else
-		begin
-			locked = 1;
-		end
-
-endmodule
-
 module mips32r1_bus_if_wb32(
 	/* mips32r1 interface */
 	input [29:0] cpu_addr,
@@ -99,7 +64,7 @@ module mips32r1_bus_if_wb32(
 			if (cpu_read | we)
 			begin
 				wb_adr_o <= { cpu_addr[29:0], 2'b00 };
-				wb_dat_o <= cpu_value_o;
+				wb_dat_o <= cpu_value_i;
 				wb_we_o <= (we & !cpu_read);
 				wb_sel_o <= cpu_we;
 
@@ -204,7 +169,8 @@ module mips32r1_wb(
 	assign Handy_Instr_Address[1:0] = 2'b00;
 
 	mips32r1_bus_if_wb32 dbus_bridge(
-		.cpu_addr	(MIPS32_DataMem_Address),
+		/* FIXME: mips32r1 has no TLB/MMU so drop two most significant bits to get phys addr */
+		.cpu_addr	({3'b000, MIPS32_DataMem_Address[26:0]}),
 		.cpu_read	(MIPS32_DataMem_Read),
 		.cpu_value_o	(MIPS32_DataMem_In),
 		.cpu_ack	(MIPS32_DataMem_Ack),
@@ -216,6 +182,7 @@ module mips32r1_wb(
 
 		.wb_adr_o(dwbm_adr_o),
 		.wb_dat_i(dwbm_dat_i),
+		.wb_dat_o(dwbm_dat_o),
 		.wb_we_o(dwbm_we_o),
 		.wb_sel_o(dwbm_sel_o),
 		.wb_stb_o(dwbm_stb_o),
@@ -245,63 +212,58 @@ module mips32r1_wb(
 
 endmodule
 
-module cpu_top(
+module soc(
 	input  clock_50MHz,
 	input  reset_n
 	);
 
 	wire reset;
 	assign reset = !reset_n;
-	wire clock, clock2x;
 
-	PLL_50MHz_to_50MHz_100MHz Clock_Generator(
-		.areset (reset),
-		.inclk0 (clock_50MHz),
-		.c0     (clock),
-		.c1     (clock2x)
+	wire wb_clk;
+	assign wb_clk = clock_50MHz;
+	wire wb_rst;
+	assign wb_rst = reset;
+
+`include "wb_intercon.vh"
+
+	rom bootrom_i(
+		.wb_clk(wb_clk),
+		.wb_rst(wb_rst),
+
+		.wb_adr_i(wb_m2s_rom0_ibus_adr[10:2]),
+		.wb_stb_i(wb_m2s_rom0_ibus_stb),
+		.wb_cyc_i(wb_m2s_rom0_ibus_cyc),
+		.wb_dat_o(wb_s2m_rom0_ibus_dat),
+		.wb_ack_o(wb_s2m_rom0_ibus_ack)
 	);
 
-	wire [31:0] brom_wb_adr_i;
-	wire brom_wb_stb_i;
-	wire brom_wb_cyc_i;
-	wire brom_wb_ack_o;
-	wire [31:0] brom_wb_dat_o;
+	rom bootrom_d(
+		.wb_clk(wb_clk),
+		.wb_rst(wb_rst),
 
-	rom bootrom(
-		.wb_clk(clock_50MHz),
-		.wb_rst(reset),
-
-		.wb_adr_i(brom_wb_adr_i[10:2]),
-		.wb_stb_i(brom_wb_stb_i),
-		.wb_cyc_i(brom_wb_cyc_i),
-		.wb_dat_o(brom_wb_dat_o),
-		.wb_ack_o(brom_wb_ack_o)
+		.wb_adr_i(wb_m2s_rom0_dbus_adr[10:2]),
+		.wb_stb_i(wb_m2s_rom0_dbus_stb),
+		.wb_cyc_i(wb_m2s_rom0_dbus_cyc),
+		.wb_dat_o(wb_s2m_rom0_dbus_dat),
+		.wb_ack_o(wb_s2m_rom0_dbus_ack)
 	);
-
-	wire uart_wb_we_i;
-	wire uart_wb_stb_i;
-	wire uart_wb_cyc_i;
-	wire uart_wb_ack_o;
-	wire [31:0] uart_wb_adr_i;
-	wire [31:0] uart_wb_dat_i;
-	wire [31:0] uart_wb_dat_o;
-	wire [3:0] uart_wb_sel_i;
 
 	wire uart_tx;
 	wire uart_rx;
 
 	uart_top uart16550(
-		.wb_clk_i(clock_50MHz),
-		.wb_rst_i(reset),
+		.wb_clk_i(wb_clk),
+		.wb_rst_i(wb_rst),
 
-		.wb_we_i(uart_wb_we_i),
-		.wb_stb_i(uart_wb_stb_i),
-		.wb_cyc_i(uart_wb_cyc_i),
-		.wb_ack_o(uart_wb_ack_o),
-		.wb_adr_i(uart_wb_adr_i[4:0]),
-		.wb_dat_i(uart_wb_dat_i),
-		.wb_dat_o(uart_wb_dat_o),
-		.wb_sel_i(uart_wb_sel_i),
+		.wb_adr_i(wb_m2s_uart0_adr[4:0]),
+		.wb_dat_i(wb_m2s_uart0_dat),
+		.wb_sel_i(wb_m2s_uart0_sel),
+		.wb_we_i(wb_m2s_uart0_we),
+		.wb_cyc_i(wb_m2s_uart0_cyc),
+		.wb_stb_i(wb_m2s_uart0_stb),
+		.wb_dat_o(wb_s2m_uart0_dat),
+		.wb_ack_o(wb_s2m_uart0_ack),
 
 		.stx_pad_o(uart_tx),
 		.srx_pad_i(uart_rx)
@@ -311,20 +273,20 @@ module cpu_top(
 		.wb_clk_i(clock_50MHz),
 		.wb_rst_i(reset),
 
-		.iwbm_adr_o(brom_wb_adr_i),
-		.iwbm_dat_i(brom_wb_dat_o),
-		.iwbm_stb_o(brom_wb_stb_i),
-		.iwbm_ack_i(brom_wb_ack_o),
-		.iwbm_cyc_o(brom_wb_cyc_i),
+		.iwbm_adr_o(wb_m2s_mips32r1_i_adr),
+		.iwbm_dat_i(wb_s2m_mips32r1_i_dat),
+		.iwbm_stb_o(wb_m2s_mips32r1_i_stb),
+		.iwbm_ack_i(wb_s2m_mips32r1_i_ack),
+		.iwbm_cyc_o(wb_m2s_mips32r1_i_cyc),
 
-		.dwbm_adr_o(uart_wb_adr_i),
-		.dwbm_dat_i(uart_wb_dat_o),
-		.dwbm_stb_o(uart_wb_stb_i),
-		.dwbm_ack_i(uart_wb_ack_o),
-		.dwbm_cyc_o(uart_wb_cyc_i),
-		.dwbm_dat_o(uart_wb_dat_i),
-		.dwbm_we_o(uart_wb_we_i),
-		.dwbm_sel_o(uart_wb_sel_i)
+		.dwbm_adr_o(wb_m2s_mips32r1_d_adr),
+		.dwbm_dat_i(wb_s2m_mips32r1_d_dat),
+		.dwbm_stb_o(wb_m2s_mips32r1_d_stb),
+		.dwbm_ack_i(wb_s2m_mips32r1_d_ack),
+		.dwbm_cyc_o(wb_m2s_mips32r1_d_cyc),
+		.dwbm_dat_o(wb_m2s_mips32r1_d_dat),
+		.dwbm_we_o(wb_m2s_mips32r1_d_we),
+		.dwbm_sel_o(wb_m2s_mips32r1_d_sel)
 	);
 endmodule
 
@@ -344,7 +306,7 @@ module Top;
 	end
 
 	initial
-		#100000 $finish;
+		#10000 $finish;
 
 	initial
 	begin
@@ -352,7 +314,7 @@ module Top;
 		$dumpvars(0, Top);
 	end
 
-	cpu_top cpu(
+	soc soc(
 		.clock_50MHz(clk),
 		.reset_n(reset)
 	);
