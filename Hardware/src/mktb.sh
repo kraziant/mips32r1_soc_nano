@@ -15,7 +15,6 @@ iverilog \
 	wb_intercon/rtl/verilog/wb_data_resize.v \
 	wb_intercon/wb_intercon.v \
 	rom.v \
-	wb_ram.v \
 	uart16550-1.5/uart_defines.v \
 	uart16550-1.5/raminfr.v \
 	uart16550-1.5/uart_sync_flops.v \
