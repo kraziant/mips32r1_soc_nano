@@ -89,7 +89,7 @@ module wb_arbiter
       .rst (wb_rst_i),
       .request (wbm_cyc_i),
       .grant (grant),
-      .select (master_sel),
+      .sel (master_sel),
       .active (active));
 
    //Mux active master
