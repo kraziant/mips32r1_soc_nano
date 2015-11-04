@@ -13,6 +13,8 @@ iverilog \
 	-I $SRC/verilog_utils \
 	-I $SRC/wb_intercon \
 	top.v \
+	$SRC/verilog-arbiter/src/arbiter.v \
+	$SRC/wb_intercon/rtl/verilog/wb_arbiter.v \
 	$SRC/wb_intercon/rtl/verilog/wb_mux.v \
 	$SRC/wb_intercon/rtl/verilog/wb_data_resize.v \
 	$SRC/wb_intercon/wb_intercon.v \

@@ -227,26 +227,15 @@ module soc(
 
 `include "wb_intercon.vh"
 
-	rom bootrom_i(
+	rom bootrom(
 		.wb_clk(wb_clk),
 		.wb_rst(wb_rst),
 
-		.wb_adr_i(wb_m2s_rom0_ibus_adr[10:2]),
-		.wb_stb_i(wb_m2s_rom0_ibus_stb),
-		.wb_cyc_i(wb_m2s_rom0_ibus_cyc),
-		.wb_dat_o(wb_s2m_rom0_ibus_dat),
-		.wb_ack_o(wb_s2m_rom0_ibus_ack)
-	);
-
-	rom bootrom_d(
-		.wb_clk(wb_clk),
-		.wb_rst(wb_rst),
-
-		.wb_adr_i(wb_m2s_rom0_dbus_adr[10:2]),
-		.wb_stb_i(wb_m2s_rom0_dbus_stb),
-		.wb_cyc_i(wb_m2s_rom0_dbus_cyc),
-		.wb_dat_o(wb_s2m_rom0_dbus_dat),
-		.wb_ack_o(wb_s2m_rom0_dbus_ack)
+		.wb_adr_i(wb_m2s_rom0_adr[10:2]),
+		.wb_stb_i(wb_m2s_rom0_stb),
+		.wb_cyc_i(wb_m2s_rom0_cyc),
+		.wb_dat_o(wb_s2m_rom0_dat),
+		.wb_ack_o(wb_s2m_rom0_ack)
 	);
 
 	wire uart_tx;
