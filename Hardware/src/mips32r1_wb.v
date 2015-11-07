@@ -2,8 +2,8 @@ module mips32r1_bus_if_wb32(
 	/* mips32r1 interface */
 	input [29:0] cpu_addr,
 	input cpu_read,
-	output [31:0] cpu_value_o,
-	output cpu_ack,
+	output reg [31:0] cpu_value_o,
+	output reg cpu_ack,
 	input [3:0] cpu_we,
 	input [31:0] cpu_value_i,
 
@@ -11,14 +11,14 @@ module mips32r1_bus_if_wb32(
 	input wb_rst_i,
 	input wb_clk_i,
 
-	output [31:0] wb_adr_o,
-	output [31:0] wb_dat_o,
+	output reg [31:0] wb_adr_o,
+	output reg [31:0] wb_dat_o,
 	input [31:0] wb_dat_i,
-	output wb_we_o,
-	output [3:0] wb_sel_o,
-	output wb_stb_o,
+	output reg wb_we_o,
+	output reg [3:0] wb_sel_o,
+	output reg wb_stb_o,
 	input wb_ack_i,
-	output wb_cyc_o
+	output reg wb_cyc_o
 );
 
 	reg [2:0] state;
@@ -26,16 +26,6 @@ module mips32r1_bus_if_wb32(
 `define IDLE 3'b000
 `define WBSTART 3'b001
 `define WBEND 3'b010
-
-	reg [31:0] wb_adr_o;
-	reg [31:0] wb_dat_o;
-	reg wb_we_o;
-	reg [3:0] wb_sel_o;
-	reg wb_stb_o;
-	reg wb_cyc_o;
-
-	reg cpu_ack;
-	reg [31:0] cpu_value_o;
 
 	wire we;
 	assign we = (cpu_we[0] | cpu_we[1] | cpu_we[2] | cpu_we[3]);
