@@ -3,27 +3,48 @@
 ###############################################################################
 # make_project.sh
 #
-# Create the Quartus-II project files for the mips32r1 system-on-chip (SoC)
-# on the Altera DE0-Nano FPGA.
+# Create the Quartus-II project files for the mips32r1 system-on-chip (SoC).
 #
 # After running this script, use the Makefile in the new project directory to
 # build the project and configure the FPGA.
 #
 ###############################################################################
 
-PROJECT_NAME="mips32r1_soc_nano"
+BOARDS=$(ls -1 boards)
 
-# Relative path to the (future) project directory
+if [ "$1" = "" -o ! -f "boards/$1/settings.tcl" ]; then
+	echo "Usage:"
+	echo "    make_project.sh <board> [<project dir>]"
+	echo
+	echo "Available boards:"
+	for i in $BOARDS; do
+		echo "  $i"
+	done
+	exit
+fi
+
+BOARD=$1
+
+PROJECT_NAME="mips32r1-soc"
+
+# Default relative path to the (future) project directory
 PROJECT_PATH=proj
+if [ "$2" != "" ]; then
+	PROJECT_PATH=$2
+fi
 
 # Relative path to the (existing) source directory
-SOURCE_PATH=src
+SOURCE_PATH=boards/$BOARD
 
 # Relative path and name of the project settings script
-SETTINGS_SCRIPT=scripts/settings.tcl
+SETTINGS_SCRIPT=$SOURCE_PATH/settings.tcl
 
 MAKEFILE_TEMPLATE=scripts/Makefile.template
 
+# We can skip adding quartus/bin/ dir to $PATH.
+# Just redefine QUARTUS variable
+#QUARTUS=/opt/altera/13.1/quartus/bin/quartus_
+QUARTUS=quartus_
 
 #-------------------------------------------------------#
 
@@ -35,17 +56,29 @@ PATH_LVLS=$(echo $PATH_DIFF | tr -dc '/' | wc -m)
 PATH_BACK=$(printf '../%.0s' {1..$PATH_LVLS})
 
 # Fill in the path to the BRAM memory contents file
-sed "s|TODO_INIT_FILE_STRING_TODO|$PATH_BACK$SOURCE_PATH/BRAM/Memory_Contents.mif|g" \
-    $SOURCE_PATH/BRAM/BRAM_64KB/BRAM_64KB.v.template > \
-    $SOURCE_PATH/BRAM/BRAM_64KB/BRAM_64KB.v
+#sed "s|TODO_INIT_FILE_STRING_TODO|$PATH_BACK$SOURCE_PATH/BRAM/Memory_Contents.mif|g" \
+#    $SOURCE_PATH/BRAM/BRAM_64KB/BRAM_64KB.v.template > \
+#    $SOURCE_PATH/BRAM/BRAM_64KB/BRAM_64KB.v
 
 # Create the project
 mkdir -p $PROJECT_PATH
 cd $PROJECT_PATH
-/home/altera/15.0/quartus/bin/quartus_sh -t "$PATH_BACK$SETTINGS_SCRIPT" "$PROJECT_NAME" "$PATH_BACK$SOURCE_PATH"
+${QUARTUS}sh -t "$PATH_BACK$SETTINGS_SCRIPT" "$PROJECT_NAME" "$PATH_BACK$SOURCE_PATH"
 cd $PATH_BACK
 
 # Create the Makefile
 sed -e "s|TODO_PROJECT_TODO|$PROJECT_NAME|g" \
     -e "s|TODO_SOURCES_TODO|$PATH_BACK$SOURCE_PATH|g" \
+    -e "s|TODO_QUARTUS_TODO|$QUARTUS|g" \
     $MAKEFILE_TEMPLATE > $PROJECT_PATH/Makefile
+
+#
+# Suppress some warnings
+#   Warning (20028): Parallel compilation is not licensed and has been disabled
+#   Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
+#
+
+cat <<EOF > $PROJECT_PATH/${PROJECT_NAME}.srf
+{ "" "" "" "*" {  } {  } 0 20028 "" 0 0 "Quartus II" 0 -1 0 ""}
+{ "" "" "" "*" {  } {  } 0 292013 "" 0 0 "Quartus II" 0 -1 0 ""}
+EOF
