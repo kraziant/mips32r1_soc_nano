@@ -1,3 +1,4 @@
+mips32r1_soc.v
 rom.v
 mips32r1_wb.v
 verilog-arbiter/src/arbiter.v
