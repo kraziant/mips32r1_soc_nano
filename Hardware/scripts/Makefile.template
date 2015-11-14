@@ -1,8 +1,9 @@
 QUARTUS=TODO_QUARTUS_TODO
 PROJECT=TODO_PROJECT_TODO
+#QFLAGS="--64bit"
 
 $(PROJECT).sof: $(PROJECT).qsf
-	$(QUARTUS)sh --flow compile $(PROJECT)
+	$(QUARTUS)sh $(QFLAGS) --flow compile $(PROJECT)
 
 $(PROJECT).svf: $(PROJECT).sof
 	$(QUARTUS)cpf -c -n p -q 2MHz -g 3.3 $< $@
