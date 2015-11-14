@@ -84,7 +84,6 @@ set_location_assignment PIN_136 -to FTDI_BD3
 
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_global_assignment -name VCCA_USER_VOLTAGE 3.3V
-set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
 set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
