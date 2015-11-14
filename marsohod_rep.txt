@@ -1,0 +1,64 @@
+marsohod2
+
++---------------------------------------------------------------------------------+
+; Flow Summary                                                                    ;
++------------------------------------+--------------------------------------------+
+; Flow Status                        ; Successful - Sat Nov 14 11:50:43 2015      ;
+; Quartus II 64-Bit Version          ; 13.1.4 Build 182 03/12/2014 SJ Web Edition ;
+; Revision Name                      ; mips32r1-soc                               ;
+; Top-level Entity Name              ; marsohod2                                  ;
+; Family                             ; Cyclone III                                ;
+; Device                             ; EP3C10E144C8                               ;
+; Timing Models                      ; Final                                      ;
+; Total logic elements               ; 8,964 / 10,320 ( 87 % )                    ;
+;     Total combinational functions  ; 8,027 / 10,320 ( 78 % )                    ;
+;     Dedicated logic registers      ; 2,464 / 10,320 ( 24 % )                    ;
+; Total registers                    ; 2464                                       ;
+; Total pins                         ; 14 / 95 ( 15 % )                           ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 256 / 423,936 ( < 1 % )                    ;
+; Embedded Multiplier 9-bit elements ; 16 / 46 ( 35 % )                           ;
+; Total PLLs                         ; 1 / 2 ( 50 % )                             ;
++------------------------------------+--------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                                              ;
++------------+-----------------+-------------------------------------------------+------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                                      ; Note                                           ;
++------------+-----------------+-------------------------------------------------+------------------------------------------------+
+; 25.45 MHz  ; 25.45 MHz       ; pll|altpll_component|auto_generated|pll1|clk[0] ;                                                ;
++------------+-----------------+-------------------------------------------------+------------------------------------------------+
+
+
+marsohod3
+
++---------------------------------------------------------------------------------+
+; Flow Summary                                                                    ;
++------------------------------------+--------------------------------------------+
+; Flow Status                        ; Successful - Sat Nov 14 11:58:54 2015      ;
+; Quartus II 64-Bit Version          ; 15.0.2 Build 153 07/15/2015 SJ Web Edition ;
+; Revision Name                      ; mips32r1-soc                               ;
+; Top-level Entity Name              ; marsohod3                                  ;
+; Family                             ; MAX 10                                     ;
+; Device                             ; 10M50SAE144C8GES                           ;
+; Timing Models                      ; Preliminary                                ;
+; Total logic elements               ; 8,404 / 49,760 ( 17 % )                    ;
+;     Total combinational functions  ; 8,037 / 49,760 ( 16 % )                    ;
+;     Dedicated logic registers      ; 2,464 / 49,760 ( 5 % )                     ;
+; Total registers                    ; 2464                                       ;
+; Total pins                         ; 18 / 101 ( 18 % )                          ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 256 / 1,677,312 ( < 1 % )                  ;
+; Embedded Multiplier 9-bit elements ; 16 / 288 ( 6 % )                           ;
+; Total PLLs                         ; 1 / 1 ( 100 % )                            ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                              ;
+; ADC blocks                         ; 0 / 1 ( 0 % )                              ;
++------------------------------------+--------------------------------------------+
+
++--------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                   ;
++-----------+-----------------+-------------------------------------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name                                      ; Note ;
++-----------+-----------------+-------------------------------------------------+------+
+; 29.45 MHz ; 29.45 MHz       ; pll|altpll_component|auto_generated|pll1|clk[0] ;      ;
++-----------+-----------------+-------------------------------------------------+------+
