@@ -15,16 +15,16 @@ a1090003 // bfc00034:	sb	t1,3(t0)
 03e04821 // bfc00038:	move	t1,ra
 04110001 // bfc0003c:	bal	0xbfc00044
 00000000 // bfc00040:	nop
-27e5030d // bfc00044:	addiu	a1,ra,781
+27e502e0 // bfc00044:	addiu	a1,ra,736
 0120f821 // bfc00048:	move	ra,t1
-04110071 // bfc0004c:	bal	0xbfc00214
+0411006a // bfc0004c:	bal	0xbfc001f8
 00000000 // bfc00050:	nop
 03e04821 // bfc00054:	move	t1,ra
 04110001 // bfc00058:	bal	0xbfc00060
 00000000 // bfc0005c:	nop
-27e502d0 // bfc00060:	addiu	a1,ra,720
+27e502b4 // bfc00060:	addiu	a1,ra,692
 0120f821 // bfc00064:	move	ra,t1
-0411006a // bfc00068:	bal	0xbfc00214
+04110063 // bfc00068:	bal	0xbfc001f8
 00000000 // bfc0006c:	nop
 3c08bf00 // bfc00070:	lui	t0,0xbf00
 35080900 // bfc00074:	ori	t0,t0,0x900
@@ -34,479 +34,223 @@ a1090003 // bfc00034:	sb	t1,3(t0)
 00000000 // bfc00084:	nop
 91020000 // bfc00088:	lbu	v0,0(t0)
 00402021 // bfc0008c:	move	a0,v0
-24030071 // bfc00090:	li	v1,113
-14430005 // bfc00094:	bne	v0,v1,0xbfc000ac
+24030064 // bfc00090:	li	v1,100
+10430009 // bfc00094:	beq	v0,v1,0xbfc000bc
 00000000 // bfc00098:	nop
-04110054 // bfc0009c:	bal	0xbfc001f0
-00000000 // bfc000a0:	nop
-100000de // bfc000a4:	b	0xbfc00420
-00000000 // bfc000a8:	nop
-24030064 // bfc000ac:	li	v1,100
-10430009 // bfc000b0:	beq	v0,v1,0xbfc000d8
-00000000 // bfc000b4:	nop
-24030077 // bfc000b8:	li	v1,119
-1043002a // bfc000bc:	beq	v0,v1,0xbfc00168
+24030077 // bfc0009c:	li	v1,119
+1043002a // bfc000a0:	beq	v0,v1,0xbfc0014c
+00000000 // bfc000a4:	nop
+24030067 // bfc000a8:	li	v1,103
+10430037 // bfc000ac:	beq	v0,v1,0xbfc0018c
+00000000 // bfc000b0:	nop
+1000ffe0 // bfc000b4:	b	0xbfc00038
+00000000 // bfc000b8:	nop
+04110045 // bfc000bc:	bal	0xbfc001d4
 00000000 // bfc000c0:	nop
-24030067 // bfc000c4:	li	v1,103
-10430037 // bfc000c8:	beq	v0,v1,0xbfc001a8
+24040020 // bfc000c4:	li	a0,32
+04110042 // bfc000c8:	bal	0xbfc001d4
 00000000 // bfc000cc:	nop
-1000ffd9 // bfc000d0:	b	0xbfc00038
+04110056 // bfc000d0:	bal	0xbfc0022c
 00000000 // bfc000d4:	nop
-04110045 // bfc000d8:	bal	0xbfc001f0
-00000000 // bfc000dc:	nop
-24040020 // bfc000e0:	li	a0,32
-04110042 // bfc000e4:	bal	0xbfc001f0
-00000000 // bfc000e8:	nop
-04110056 // bfc000ec:	bal	0xbfc00248
+03e04821 // bfc000d8:	move	t1,ra
+04110001 // bfc000dc:	bal	0xbfc000e4
+00000000 // bfc000e0:	nop
+27e50239 // bfc000e4:	addiu	a1,ra,569
+0120f821 // bfc000e8:	move	ra,t1
+04110042 // bfc000ec:	bal	0xbfc001f8
 00000000 // bfc000f0:	nop
-03e04821 // bfc000f4:	move	t1,ra
-04110001 // bfc000f8:	bal	0xbfc00100
-00000000 // bfc000fc:	nop
-27e50239 // bfc00100:	addiu	a1,ra,569
-0120f821 // bfc00104:	move	ra,t1
-04110042 // bfc00108:	bal	0xbfc00214
-00000000 // bfc0010c:	nop
-8c440000 // bfc00110:	lw	a0,0(v0)
-00807021 // bfc00114:	move	t6,a0
-240d0020 // bfc00118:	li	t5,32
-21adfffc // bfc0011c:	addi	t5,t5,-4
-01ae2006 // bfc00120:	srlv	a0,t6,t5
-3084000f // bfc00124:	andi	a0,a0,0xf
-2881000a // bfc00128:	slti	at,a0,10
-14200002 // bfc0012c:	bnez	at,0xbfc00138
-00000000 // bfc00130:	nop
-20840027 // bfc00134:	addi	a0,a0,39
-20840030 // bfc00138:	addi	a0,a0,48
-3c08bf00 // bfc0013c:	lui	t0,0xbf00
-35080900 // bfc00140:	ori	t0,t0,0x900
-91090005 // bfc00144:	lbu	t1,5(t0)
-31290020 // bfc00148:	andi	t1,t1,0x20
-1120fffd // bfc0014c:	beqz	t1,0xbfc00144
+8c440000 // bfc000f4:	lw	a0,0(v0)
+00807021 // bfc000f8:	move	t6,a0
+240d0020 // bfc000fc:	li	t5,32
+21adfffc // bfc00100:	addi	t5,t5,-4
+01ae2006 // bfc00104:	srlv	a0,t6,t5
+3084000f // bfc00108:	andi	a0,a0,0xf
+2881000a // bfc0010c:	slti	at,a0,10
+14200002 // bfc00110:	bnez	at,0xbfc0011c
+00000000 // bfc00114:	nop
+20840027 // bfc00118:	addi	a0,a0,39
+20840030 // bfc0011c:	addi	a0,a0,48
+3c08bf00 // bfc00120:	lui	t0,0xbf00
+35080900 // bfc00124:	ori	t0,t0,0x900
+91090005 // bfc00128:	lbu	t1,5(t0)
+31290020 // bfc0012c:	andi	t1,t1,0x20
+1120fffd // bfc00130:	beqz	t1,0xbfc00128
+00000000 // bfc00134:	nop
+a1040000 // bfc00138:	sb	a0,0(t0)
+1da0fff0 // bfc0013c:	bgtz	t5,0xbfc00100
+00000000 // bfc00140:	nop
+1000ffc3 // bfc00144:	b	0xbfc00054
+00000000 // bfc00148:	nop
+04110021 // bfc0014c:	bal	0xbfc001d4
 00000000 // bfc00150:	nop
-a1040000 // bfc00154:	sb	a0,0(t0)
-1da0fff0 // bfc00158:	bgtz	t5,0xbfc0011c
+24040020 // bfc00154:	li	a0,32
+0411001e // bfc00158:	bal	0xbfc001d4
 00000000 // bfc0015c:	nop
-1000ffbc // bfc00160:	b	0xbfc00054
+04110032 // bfc00160:	bal	0xbfc0022c
 00000000 // bfc00164:	nop
-04110021 // bfc00168:	bal	0xbfc001f0
-00000000 // bfc0016c:	nop
-24040020 // bfc00170:	li	a0,32
-0411001e // bfc00174:	bal	0xbfc001f0
-00000000 // bfc00178:	nop
-04110032 // bfc0017c:	bal	0xbfc00248
-00000000 // bfc00180:	nop
-00408021 // bfc00184:	move	s0,v0
-24040020 // bfc00188:	li	a0,32
-04110018 // bfc0018c:	bal	0xbfc001f0
+00408021 // bfc00168:	move	s0,v0
+24040020 // bfc0016c:	li	a0,32
+04110018 // bfc00170:	bal	0xbfc001d4
+00000000 // bfc00174:	nop
+0411002c // bfc00178:	bal	0xbfc0022c
+00000000 // bfc0017c:	nop
+ae020000 // bfc00180:	sw	v0,0(s0)
+1000ffb3 // bfc00184:	b	0xbfc00054
+00000000 // bfc00188:	nop
+04110011 // bfc0018c:	bal	0xbfc001d4
 00000000 // bfc00190:	nop
-0411002c // bfc00194:	bal	0xbfc00248
-00000000 // bfc00198:	nop
-ae020000 // bfc0019c:	sw	v0,0(s0)
-1000ffac // bfc001a0:	b	0xbfc00054
+24040020 // bfc00194:	li	a0,32
+0411000e // bfc00198:	bal	0xbfc001d4
+00000000 // bfc0019c:	nop
+04110022 // bfc001a0:	bal	0xbfc0022c
 00000000 // bfc001a4:	nop
-04110011 // bfc001a8:	bal	0xbfc001f0
-00000000 // bfc001ac:	nop
-24040020 // bfc001b0:	li	a0,32
-0411000e // bfc001b4:	bal	0xbfc001f0
-00000000 // bfc001b8:	nop
-04110022 // bfc001bc:	bal	0xbfc00248
+03e04821 // bfc001a8:	move	t1,ra
+04110001 // bfc001ac:	bal	0xbfc001b4
+00000000 // bfc001b0:	nop
+27e50169 // bfc001b4:	addiu	a1,ra,361
+0120f821 // bfc001b8:	move	ra,t1
+0411000e // bfc001bc:	bal	0xbfc001f8
 00000000 // bfc001c0:	nop
-03e04821 // bfc001c4:	move	t1,ra
-04110001 // bfc001c8:	bal	0xbfc001d0
-00000000 // bfc001cc:	nop
-27e50169 // bfc001d0:	addiu	a1,ra,361
-0120f821 // bfc001d4:	move	ra,t1
-0411000e // bfc001d8:	bal	0xbfc00214
-00000000 // bfc001dc:	nop
-0040f809 // bfc001e0:	jalr	v0
-00000000 // bfc001e4:	nop
-1000ff9a // bfc001e8:	b	0xbfc00054
-00000000 // bfc001ec:	nop
-3c08bf00 // bfc001f0:	lui	t0,0xbf00
-35080900 // bfc001f4:	ori	t0,t0,0x900
-91090005 // bfc001f8:	lbu	t1,5(t0)
-31290020 // bfc001fc:	andi	t1,t1,0x20
-1120fffd // bfc00200:	beqz	t1,0xbfc001f8
+0040f809 // bfc001c4:	jalr	v0
+00000000 // bfc001c8:	nop
+1000ffa1 // bfc001cc:	b	0xbfc00054
+00000000 // bfc001d0:	nop
+3c08bf00 // bfc001d4:	lui	t0,0xbf00
+35080900 // bfc001d8:	ori	t0,t0,0x900
+91090005 // bfc001dc:	lbu	t1,5(t0)
+31290020 // bfc001e0:	andi	t1,t1,0x20
+1120fffd // bfc001e4:	beqz	t1,0xbfc001dc
+00000000 // bfc001e8:	nop
+a1040000 // bfc001ec:	sb	a0,0(t0)
+03e00008 // bfc001f0:	jr	ra
+00000000 // bfc001f4:	nop
+90a40000 // bfc001f8:	lbu	a0,0(a1)
+20a50001 // bfc001fc:	addi	a1,a1,1
+10800042 // bfc00200:	beqz	a0,0xbfc0030c
 00000000 // bfc00204:	nop
-a1040000 // bfc00208:	sb	a0,0(t0)
-03e00008 // bfc0020c:	jr	ra
-00000000 // bfc00210:	nop
-90a40000 // bfc00214:	lbu	a0,0(a1)
-20a50001 // bfc00218:	addi	a1,a1,1
-10800042 // bfc0021c:	beqz	a0,0xbfc00328
-00000000 // bfc00220:	nop
-3c08bf00 // bfc00224:	lui	t0,0xbf00
-35080900 // bfc00228:	ori	t0,t0,0x900
-91090005 // bfc0022c:	lbu	t1,5(t0)
-31290020 // bfc00230:	andi	t1,t1,0x20
-1120fffd // bfc00234:	beqz	t1,0xbfc0022c
-00000000 // bfc00238:	nop
-a1040000 // bfc0023c:	sb	a0,0(t0)
-1000fff4 // bfc00240:	b	0xbfc00214
-00000000 // bfc00244:	nop
-240b0008 // bfc00248:	li	t3,8
-240a0000 // bfc0024c:	li	t2,0
-3c08bf00 // bfc00250:	lui	t0,0xbf00
-35080900 // bfc00254:	ori	t0,t0,0x900
-91090005 // bfc00258:	lbu	t1,5(t0)
-31220001 // bfc0025c:	andi	v0,t1,0x1
-1040fffb // bfc00260:	beqz	v0,0xbfc00250
-00000000 // bfc00264:	nop
-91020000 // bfc00268:	lbu	v0,0(t0)
-2403001b // bfc0026c:	li	v1,27
-1043ff78 // bfc00270:	beq	v0,v1,0xbfc00054
-00000000 // bfc00274:	nop
-24030030 // bfc00278:	li	v1,48
-0043082a // bfc0027c:	slt	at,v0,v1
-10200003 // bfc00280:	beqz	at,0xbfc00290
-00000000 // bfc00284:	nop
-1000fff1 // bfc00288:	b	0xbfc00250
-00000000 // bfc0028c:	nop
-24030039 // bfc00290:	li	v1,57
-0062082a // bfc00294:	slt	at,v1,v0
-10200011 // bfc00298:	beqz	at,0xbfc002e0
-00000000 // bfc0029c:	nop
-24030066 // bfc002a0:	li	v1,102
-0062082a // bfc002a4:	slt	at,v1,v0
-10200003 // bfc002a8:	beqz	at,0xbfc002b8
-00000000 // bfc002ac:	nop
-1000ffe7 // bfc002b0:	b	0xbfc00250
-00000000 // bfc002b4:	nop
-24030061 // bfc002b8:	li	v1,97
-0043082a // bfc002bc:	slt	at,v0,v1
-10200003 // bfc002c0:	beqz	at,0xbfc002d0
-00000000 // bfc002c4:	nop
-1000ffe1 // bfc002c8:	b	0xbfc00250
-00000000 // bfc002cc:	nop
-00433822 // bfc002d0:	sub	a3,v0,v1
-20e7000a // bfc002d4:	addi	a3,a3,10
-10000003 // bfc002d8:	b	0xbfc002e8
-00000000 // bfc002dc:	nop
-24070030 // bfc002e0:	li	a3,48
-00473822 // bfc002e4:	sub	a3,v0,a3
-00402021 // bfc002e8:	move	a0,v0
-3c08bf00 // bfc002ec:	lui	t0,0xbf00
-35080900 // bfc002f0:	ori	t0,t0,0x900
-91090005 // bfc002f4:	lbu	t1,5(t0)
-31290020 // bfc002f8:	andi	t1,t1,0x20
-1120fffd // bfc002fc:	beqz	t1,0xbfc002f4
-00000000 // bfc00300:	nop
-a1040000 // bfc00304:	sb	a0,0(t0)
-000a5100 // bfc00308:	sll	t2,t2,0x4
-01475025 // bfc0030c:	or	t2,t2,a3
-216bffff // bfc00310:	addi	t3,t3,-1
-11600003 // bfc00314:	beqz	t3,0xbfc00324
-00000000 // bfc00318:	nop
-1000ffcc // bfc0031c:	b	0xbfc00250
-00000000 // bfc00320:	nop
-01401021 // bfc00324:	move	v0,t2
-03e00008 // bfc00328:	jr	ra
-00000000 // bfc0032c:	nop
-0d0a6e6d // bfc00330:	jal	0xb429b9b4
-6f6e3e20 // bfc00334:	0x6f6e3e20
-000d0a00 // bfc00338:	sll	at,t5,0x8
-08200800 // bfc0033c:	j	0xb0802000
-736b6970 // bfc00340:	0x736b6970
-70696e67 // bfc00344:	0x70696e67
-206e6d6f // bfc00348:	addi	t6,v1,28015
-6e2e2e2e // bfc0034c:	0x6e2e2e2e
-000d0a0d // bfc00350:	break	0xd,0x28
-0a6e6d6f // bfc00354:	j	0xb9b9b5bc
-6e20636f // bfc00358:	0x6e20636f
-6d6d616e // bfc0035c:	0x6d6d616e
-64733a0d // bfc00360:	0x64733a0d
-0a207120 // bfc00364:	j	0xb881c480
-2d207175 // bfc00368:	sltiu	zero,t1,29045
-69740d0a // bfc0036c:	0x69740d0a
-2064203c // bfc00370:	addi	a0,v1,8252
-61646472 // bfc00374:	0x61646472
-3e202d20 // bfc00378:	0x3e202d20
-72656164 // bfc0037c:	0x72656164
-2033322d // bfc00380:	addi	s3,at,12845
-62697420 // bfc00384:	0x62697420
-776f7264 // bfc00388:	jalx	0xbdbdc991
-2066726f // bfc0038c:	addi	a2,v1,29295
-6d203c61 // bfc00390:	0x6d203c61
-6464723e // bfc00394:	0x6464723e
-0d0a2077 // bfc00398:	jal	0xb42881dc
-203c6164 // bfc0039c:	addi	gp,at,24932
-64723e20 // bfc003a0:	0x64723e20
-3c76616c // bfc003a4:	0x3c76616c
-3e202d20 // bfc003a8:	0x3e202d20
-77726974 // bfc003ac:	jalx	0xbdc9a5d1
-65203332 // bfc003b0:	0x65203332
-2d626974 // bfc003b4:	sltiu	v0,t3,26996
-20776f72 // bfc003b8:	addi	s7,v1,28530
-6420746f // bfc003bc:	0x6420746f
-203c6164 // bfc003c0:	addi	gp,at,24932
-64723e0d // bfc003c4:	0x64723e0d
-0a206720 // bfc003c8:	j	0xb8819c80
-3c616464 // bfc003cc:	0x3c616464
-723e202d // bfc003d0:	0x723e202d
-206a756d // bfc003d4:	addi	t2,v1,30061
-7020746f // bfc003d8:	0x7020746f
-203c6164 // bfc003dc:	addi	gp,at,24932
-64723e0d // bfc003e0:	0x64723e0d
-0a202020 // bfc003e4:	j	0xb8808080
-75736520 // bfc003e8:	jalx	0xb5cd9481
-3c455343 // bfc003ec:	0x3c455343
-3e206b65 // bfc003f0:	0x3e206b65
-7920746f // bfc003f4:	0x7920746f
-20696e74 // bfc003f8:	addi	t1,v1,28276
-65727275 // bfc003fc:	0x65727275
-70742063 // bfc00400:	0x70742063
-75727265 // bfc00404:	jalx	0xb5c9c995
-6e742063 // bfc00408:	0x6e742063
-6f6d6d61 // bfc0040c:	0x6f6d6d61
-6e640d0a // bfc00410:	0x6e640d0a
-00000000 // bfc00414:	nop
-00000000 // bfc00418:	nop
-00000000 // bfc0041c:	nop
-1000ff0c // bfc00420:	b	0xbfc00054
-00000000 // bfc00424:	nop
-03e04821 // bfc00428:	move	t1,ra
-04110001 // bfc0042c:	bal	0xbfc00434
-00000000 // bfc00430:	nop
-27e5ff05 // bfc00434:	addiu	a1,ra,-251
-0120f821 // bfc00438:	move	ra,t1
-0411ff75 // bfc0043c:	bal	0xbfc00214
-00000000 // bfc00440:	nop
-03e04821 // bfc00444:	move	t1,ra
-04110001 // bfc00448:	bal	0xbfc00450
-00000000 // bfc0044c:	nop
-27e4fbb0 // bfc00450:	addiu	a0,ra,-1104
-0120f821 // bfc00454:	move	ra,t1
-3c05a040 // bfc00458:	lui	a1,0xa040
-24a50000 // bfc0045c:	addiu	a1,a1,0
-10850013 // bfc00460:	beq	a0,a1,0xbfc004b0
-00000000 // bfc00464:	nop
-3c08a040 // bfc00468:	lui	t0,0xa040
-25080000 // bfc0046c:	addiu	t0,t0,0
-3c09a042 // bfc00470:	lui	t1,0xa042
-25294000 // bfc00474:	addiu	t1,t1,16384
-01285023 // bfc00478:	subu	t2,t1,t0
-008a3021 // bfc0047c:	addu	a2,a0,t2
-8c8c0000 // bfc00480:	lw	t4,0(a0)
-8c8d0004 // bfc00484:	lw	t5,4(a0)
-8c8e0008 // bfc00488:	lw	t6,8(a0)
-8c8f000c // bfc0048c:	lw	t7,12(a0)
-acac0000 // bfc00490:	sw	t4,0(a1)
-acad0004 // bfc00494:	sw	t5,4(a1)
-acae0008 // bfc00498:	sw	t6,8(a1)
-acaf000c // bfc0049c:	sw	t7,12(a1)
-20840010 // bfc004a0:	addi	a0,a0,16
-00865823 // bfc004a4:	subu	t3,a0,a2
-1960fff5 // bfc004a8:	blez	t3,0xbfc00480
-20a50010 // bfc004ac:	addi	a1,a1,16
-3c1da03f // bfc004b0:	lui	sp,0xa03f
-37bdfff0 // bfc004b4:	ori	sp,sp,0xfff0
-3c02a040 // bfc004b8:	lui	v0,0xa040
-244204d0 // bfc004bc:	addiu	v0,v0,1232
-0040f809 // bfc004c0:	jalr	v0
-00000000 // bfc004c4:	nop
-1000ffff // bfc004c8:	b	0xbfc004c8
-00000000 // bfc004cc:	nop
-3c02a040 // bfc004d0:	lui	v0,0xa040
-24420c00 // bfc004d4:	addiu	v0,v0,3072
-2406000a // bfc004d8:	li	a2,10
-3c03bf00 // bfc004dc:	lui	v1,0xbf00
-2407000d // bfc004e0:	li	a3,13
-80440000 // bfc004e4:	lb	a0,0(v0)
-50800011 // bfc004e8:	beqzl	a0,0xbfc00530
-3c04a042 // bfc004ec:	lui	a0,0xa042
-14860007 // bfc004f0:	bne	a0,a2,0xbfc00510
-00000000 // bfc004f4:	nop
-90640905 // bfc004f8:	lbu	a0,2309(v1)
-30840020 // bfc004fc:	andi	a0,a0,0x20
-1080fffd // bfc00500:	beqz	a0,0xbfc004f8
-00000000 // bfc00504:	nop
-a0670900 // bfc00508:	sb	a3,2304(v1)
-80440000 // bfc0050c:	lb	a0,0(v0)
-90650905 // bfc00510:	lbu	a1,2309(v1)
-30a50020 // bfc00514:	andi	a1,a1,0x20
-10a0fffd // bfc00518:	beqz	a1,0xbfc00510
-00000000 // bfc0051c:	nop
-308400ff // bfc00520:	andi	a0,a0,0xff
-a0640900 // bfc00524:	sb	a0,2304(v1)
-08100139 // bfc00528:	j	0xb04004e4
-24420001 // bfc0052c:	addiu	v0,v0,1
-3c06a042 // bfc00530:	lui	a2,0xa042
-24844000 // bfc00534:	addiu	a0,a0,16384
-24c6400c // bfc00538:	addiu	a2,a2,16396
-27bdffe8 // bfc0053c:	addiu	sp,sp,-24
-00c43023 // bfc00540:	subu	a2,a2,a0
-00002821 // bfc00544:	move	a1,zero
-afbf0014 // bfc00548:	sw	ra,20(sp)
-0c1002f7 // bfc0054c:	jal	0xb0400bdc
-afb00010 // bfc00550:	sw	s0,16(sp)
-3c02a07e // bfc00554:	lui	v0,0xa07e
-3c03a042 // bfc00558:	lui	v1,0xa042
-3c05a040 // bfc0055c:	lui	a1,0xa040
-3c06a042 // bfc00560:	lui	a2,0xa042
-ac624008 // bfc00564:	sw	v0,16392(v1)
-3c10a080 // bfc00568:	lui	s0,0xa080
-3c03a042 // bfc0056c:	lui	v1,0xa042
-24a50d50 // bfc00570:	addiu	a1,a1,3408
-24c63ff1 // bfc00574:	addiu	a2,a2,16369
-ac704004 // bfc00578:	sw	s0,16388(v1)
-2442c000 // bfc0057c:	addiu	v0,v0,-16384
-3c03a042 // bfc00580:	lui	v1,0xa042
-3c04a080 // bfc00584:	lui	a0,0xa080
-00c53023 // bfc00588:	subu	a2,a2,a1
-0c10016c // bfc0058c:	jal	0xb04005b0
-ac624000 // bfc00590:	sw	v0,16384(v1)
-8fbf0014 // bfc00594:	lw	ra,20(sp)
-0200c821 // bfc00598:	move	t9,s0
-8fb00010 // bfc0059c:	lw	s0,16(sp)
-03200008 // bfc005a0:	jr	t9
-27bd0018 // bfc005a4:	addiu	sp,sp,24
-0810016a // bfc005a8:	j	0xb04005a8
-00000000 // bfc005ac:	nop
-27bdffd0 // bfc005b0:	addiu	sp,sp,-48
-afbf002c // bfc005b4:	sw	ra,44(sp)
-afb60028 // bfc005b8:	sw	s6,40(sp)
-afb50024 // bfc005bc:	sw	s5,36(sp)
-afb40020 // bfc005c0:	sw	s4,32(sp)
-afb3001c // bfc005c4:	sw	s3,28(sp)
-afb20018 // bfc005c8:	sw	s2,24(sp)
-afb10014 // bfc005cc:	sw	s1,20(sp)
-14800004 // bfc005d0:	bnez	a0,0xbfc005e4
-afb00010 // bfc005d4:	sw	s0,16(sp)
-3c04a040 // bfc005d8:	lui	a0,0xa040
-0810017d // bfc005dc:	j	0xb04005f4
-24840c20 // bfc005e0:	addiu	a0,a0,3104
-14a00005 // bfc005e4:	bnez	a1,0xbfc005fc
-28c20021 // bfc005e8:	slti	v0,a2,33
-3c04a040 // bfc005ec:	lui	a0,0xa040
-24840c54 // bfc005f0:	addiu	a0,a0,3156
-0c10016a // bfc005f4:	jal	0xb04005a8
-00000000 // bfc005f8:	nop
-54400133 // bfc005fc:	bnezl	v0,0xbfc00acc
-3c04a040 // bfc00600:	lui	a0,0xa040
-3c07a040 // bfc00604:	lui	a3,0xa040
-00a01021 // bfc00608:	move	v0,a1
-00001821 // bfc0060c:	move	v1,zero
-24e70ce0 // bfc00610:	addiu	a3,a3,3296
-24090009 // bfc00614:	li	t1,9
-24420001 // bfc00618:	addiu	v0,v0,1
-00e34021 // bfc0061c:	addu	t0,a3,v1
-904affff // bfc00620:	lbu	t2,-1(v0)
-91080000 // bfc00624:	lbu	t0,0(t0)
-15480127 // bfc00628:	bne	t2,t0,0xbfc00ac8
-24630001 // bfc0062c:	addiu	v1,v1,1
-5469fffa // bfc00630:	bnel	v1,t1,0xbfc0061c
-24420001 // bfc00634:	addiu	v0,v0,1
-90470000 // bfc00638:	lbu	a3,0(v0)
-90430001 // bfc0063c:	lbu	v1,1(v0)
-00073a00 // bfc00640:	sll	a3,a3,0x8
-00673825 // bfc00644:	or	a3,v1,a3
-2ce70940 // bfc00648:	sltiu	a3,a3,2368
-24430007 // bfc0064c:	addiu	v1,v0,7
-24420008 // bfc00650:	addiu	v0,v0,8
-0067100b // bfc00654:	movn	v0,v1,a3
-88430000 // bfc00658:	lwl	v1,0(v0)
-24480008 // bfc0065c:	addiu	t0,v0,8
-98430003 // bfc00660:	lwr	v1,3(v0)
-24420004 // bfc00664:	addiu	v0,v0,4
-30630800 // bfc00668:	andi	v1,v1,0x800
-0103100b // bfc0066c:	movn	v0,t0,v1
-00a64021 // bfc00670:	addu	t0,a1,a2
-01021823 // bfc00674:	subu	v1,t0,v0
-2863000d // bfc00678:	slti	v1,v1,13
-54600113 // bfc0067c:	bnezl	v1,0xbfc00acc
-3c04a040 // bfc00680:	lui	a0,0xa040
-24430008 // bfc00684:	addiu	v1,v0,8
-2442000c // bfc00688:	addiu	v0,v0,12
-0067100b // bfc0068c:	movn	v0,v1,a3
-90430000 // bfc00690:	lbu	v1,0(v0)
-24490001 // bfc00694:	addiu	t1,v0,1
-24670003 // bfc00698:	addiu	a3,v1,3
-01094023 // bfc0069c:	subu	t0,t0,t1
-00e8402a // bfc006a0:	slt	t0,a3,t0
-51000109 // bfc006a4:	beqzl	t0,0xbfc00acc
-3c04a040 // bfc006a8:	lui	a0,0xa040
-24630004 // bfc006ac:	addiu	v1,v1,4
-01231021 // bfc006b0:	addu	v0,t1,v1
-00458023 // bfc006b4:	subu	s0,v0,a1
-3c150004 // bfc006b8:	lui	s5,0x4
-3c140101 // bfc006bc:	lui	s4,0x101
-00d08023 // bfc006c0:	subu	s0,a2,s0
-26b50001 // bfc006c4:	addiu	s5,s5,1
-24160003 // bfc006c8:	li	s6,3
-26940100 // bfc006cc:	addiu	s4,s4,256
-2a030004 // bfc006d0:	slti	v1,s0,4
-50600004 // bfc006d4:	beqzl	v1,0xbfc006e8
-88490000 // bfc006d8:	lwl	t1,0(v0)
-3c04a040 // bfc006dc:	lui	a0,0xa040
-0810017d // bfc006e0:	j	0xb04005f4
-24840c84 // bfc006e4:	addiu	a0,a0,3204
-98490003 // bfc006e8:	lwr	t1,3(v0)
-112000f9 // bfc006ec:	beqz	t1,0xbfc00ad4
-0135182b // bfc006f0:	sltu	v1,t1,s5
-14600004 // bfc006f4:	bnez	v1,0xbfc00708
-2a03000c // bfc006f8:	slti	v1,s0,12
-3c04a040 // bfc006fc:	lui	a0,0xa040
-0810017d // bfc00700:	j	0xb04005f4
-24840c94 // bfc00704:	addiu	a0,a0,3220
-5460fff5 // bfc00708:	bnezl	v1,0xbfc006e0
-3c04a040 // bfc0070c:	lui	a0,0xa040
-88510004 // bfc00710:	lwl	s1,4(v0)
-2445000c // bfc00714:	addiu	a1,v0,12
-98510007 // bfc00718:	lwr	s1,7(v0)
-1220ffef // bfc0071c:	beqz	s1,0xbfc006dc
-2610fff4 // bfc00720:	addiu	s0,s0,-12
-0131182b // bfc00724:	sltu	v1,t1,s1
-1460ffec // bfc00728:	bnez	v1,0xbfc006dc
-0211182b // bfc0072c:	sltu	v1,s0,s1
-1460ffea // bfc00730:	bnez	v1,0xbfc006dc
-00b19021 // bfc00734:	addu	s2,a1,s1
-15310005 // bfc00738:	bne	t1,s1,0xbfc00750
-00899821 // bfc0073c:	addu	s3,a0,t1
-0c1002bf // bfc00740:	jal	0xb0400afc
-02203021 // bfc00744:	move	a2,s1
-081002af // bfc00748:	j	0xb0400abc
-02602021 // bfc0074c:	move	a0,s3
-2e230003 // bfc00750:	sltiu	v1,s1,3
-546000d7 // bfc00754:	bnezl	v1,0xbfc00ab4
-3c04a040 // bfc00758:	lui	a0,0xa040
-9043000c // bfc0075c:	lbu	v1,12(v0)
-2c660012 // bfc00760:	sltiu	a2,v1,18
-14c00007 // bfc00764:	bnez	a2,0xbfc00784
-00803021 // bfc00768:	move	a2,a0
-2463ffef // bfc0076c:	addiu	v1,v1,-17
-28650004 // bfc00770:	slti	a1,v1,4
-14a000b5 // bfc00774:	bnez	a1,0xbfc00a4c
-2442000d // bfc00778:	addiu	v0,v0,13
-081001fd // bfc0077c:	j	0xb04007f4
-02662823 // bfc00780:	subu	a1,s3,a2
-00001821 // bfc00784:	move	v1,zero
-90aa0000 // bfc00788:	lbu	t2,0(a1)
-24a20001 // bfc0078c:	addiu	v0,a1,1
-2d480010 // bfc00790:	sltiu	t0,t2,16
-11000046 // bfc00794:	beqz	t0,0xbfc008b0
-01403821 // bfc00798:	move	a3,t2
-54600026 // bfc0079c:	bnezl	v1,0xbfc00838
-24a20002 // bfc007a0:	addiu	v0,a1,2
-15400012 // bfc007a4:	bnez	t2,0xbfc007f0
-24e30003 // bfc007a8:	addiu	v1,a3,3
-00403821 // bfc007ac:	move	a3,v0
-90e30000 // bfc007b0:	lbu	v1,0(a3)
-14600005 // bfc007b4:	bnez	v1,0xbfc007cc
-24e50001 // bfc007b8:	addiu	a1,a3,1
-1645fffc // bfc007bc:	bne	s2,a1,0xbfc007b0
-00a03821 // bfc007c0:	move	a3,a1
-081002ad // bfc007c4:	j	0xb0400ab4
-3c04a040 // bfc007c8:	lui	a0,0xa040
-00e23823 // bfc007cc:	subu	a3,a3,v0
-00f4102b // bfc007d0:	sltu	v0,a3,s4
-104000b6 // bfc007d4:	beqz	v0,0xbfc00ab0
-2463000f // bfc007d8:	addiu	v1,v1,15
-00a01021 // bfc007dc:	move	v0,a1
-00072a00 // bfc007e0:	sll	a1,a3,0x8
-00651821 // bfc007e4:	addu	v1,v1,a1
-00673823 // bfc007e8:	subu	a3,v1,a3
-24e30003 // bfc007ec:	addiu	v1,a3,3
-02662823 // bfc007f0:	subu	a1,s3,a2
-00a3282b // bfc007f4:	sltu	a1,a1,v1
-14a000ad // bfc007f8:	bnez	a1,0xbfc00ab0
-24670003 // bfc007fc:	addiu	a3,v1,3
+3c08bf00 // bfc00208:	lui	t0,0xbf00
+35080900 // bfc0020c:	ori	t0,t0,0x900
+91090005 // bfc00210:	lbu	t1,5(t0)
+31290020 // bfc00214:	andi	t1,t1,0x20
+1120fffd // bfc00218:	beqz	t1,0xbfc00210
+00000000 // bfc0021c:	nop
+a1040000 // bfc00220:	sb	a0,0(t0)
+1000fff4 // bfc00224:	b	0xbfc001f8
+00000000 // bfc00228:	nop
+240b0008 // bfc0022c:	li	t3,8
+240a0000 // bfc00230:	li	t2,0
+3c08bf00 // bfc00234:	lui	t0,0xbf00
+35080900 // bfc00238:	ori	t0,t0,0x900
+91090005 // bfc0023c:	lbu	t1,5(t0)
+31220001 // bfc00240:	andi	v0,t1,0x1
+1040fffb // bfc00244:	beqz	v0,0xbfc00234
+00000000 // bfc00248:	nop
+91020000 // bfc0024c:	lbu	v0,0(t0)
+2403001b // bfc00250:	li	v1,27
+1043ff7f // bfc00254:	beq	v0,v1,0xbfc00054
+00000000 // bfc00258:	nop
+24030030 // bfc0025c:	li	v1,48
+0043082a // bfc00260:	slt	at,v0,v1
+10200003 // bfc00264:	beqz	at,0xbfc00274
+00000000 // bfc00268:	nop
+1000fff1 // bfc0026c:	b	0xbfc00234
+00000000 // bfc00270:	nop
+24030039 // bfc00274:	li	v1,57
+0062082a // bfc00278:	slt	at,v1,v0
+10200011 // bfc0027c:	beqz	at,0xbfc002c4
+00000000 // bfc00280:	nop
+24030066 // bfc00284:	li	v1,102
+0062082a // bfc00288:	slt	at,v1,v0
+10200003 // bfc0028c:	beqz	at,0xbfc0029c
+00000000 // bfc00290:	nop
+1000ffe7 // bfc00294:	b	0xbfc00234
+00000000 // bfc00298:	nop
+24030061 // bfc0029c:	li	v1,97
+0043082a // bfc002a0:	slt	at,v0,v1
+10200003 // bfc002a4:	beqz	at,0xbfc002b4
+00000000 // bfc002a8:	nop
+1000ffe1 // bfc002ac:	b	0xbfc00234
+00000000 // bfc002b0:	nop
+00433822 // bfc002b4:	sub	a3,v0,v1
+20e7000a // bfc002b8:	addi	a3,a3,10
+10000003 // bfc002bc:	b	0xbfc002cc
+00000000 // bfc002c0:	nop
+24070030 // bfc002c4:	li	a3,48
+00473822 // bfc002c8:	sub	a3,v0,a3
+00402021 // bfc002cc:	move	a0,v0
+3c08bf00 // bfc002d0:	lui	t0,0xbf00
+35080900 // bfc002d4:	ori	t0,t0,0x900
+91090005 // bfc002d8:	lbu	t1,5(t0)
+31290020 // bfc002dc:	andi	t1,t1,0x20
+1120fffd // bfc002e0:	beqz	t1,0xbfc002d8
+00000000 // bfc002e4:	nop
+a1040000 // bfc002e8:	sb	a0,0(t0)
+000a5100 // bfc002ec:	sll	t2,t2,0x4
+01475025 // bfc002f0:	or	t2,t2,a3
+216bffff // bfc002f4:	addi	t3,t3,-1
+11600003 // bfc002f8:	beqz	t3,0xbfc00308
+00000000 // bfc002fc:	nop
+1000ffcc // bfc00300:	b	0xbfc00234
+00000000 // bfc00304:	nop
+01401021 // bfc00308:	move	v0,t2
+03e00008 // bfc0030c:	jr	ra
+00000000 // bfc00310:	nop
+0d0a6e6d // bfc00314:	jal	0xb429b9b4
+6f6e3e20 // bfc00318:	0x6f6e3e20
+000d0a00 // bfc0031c:	sll	at,t5,0x8
+08200800 // bfc00320:	j	0xb0802000
+0d0a0d0a // bfc00324:	jal	0xb4283428
+6e6d6f6e // bfc00328:	0x6e6d6f6e
+20636f6d // bfc0032c:	addi	v1,v1,28525
+6d616e64 // bfc00330:	0x6d616e64
+733a0d0a // bfc00334:	0x733a0d0a
+2064203c // bfc00338:	addi	a0,v1,8252
+61646472 // bfc0033c:	0x61646472
+3e202d20 // bfc00340:	0x3e202d20
+72656164 // bfc00344:	0x72656164
+2033322d // bfc00348:	addi	s3,at,12845
+62697420 // bfc0034c:	0x62697420
+776f7264 // bfc00350:	jalx	0xbdbdc991
+2066726f // bfc00354:	addi	a2,v1,29295
+6d203c61 // bfc00358:	0x6d203c61
+6464723e // bfc0035c:	0x6464723e
+0d0a2077 // bfc00360:	jal	0xb42881dc
+203c6164 // bfc00364:	addi	gp,at,24932
+64723e20 // bfc00368:	0x64723e20
+3c76616c // bfc0036c:	0x3c76616c
+3e202d20 // bfc00370:	0x3e202d20
+77726974 // bfc00374:	jalx	0xbdc9a5d1
+65203332 // bfc00378:	0x65203332
+2d626974 // bfc0037c:	sltiu	v0,t3,26996
+20776f72 // bfc00380:	addi	s7,v1,28530
+6420746f // bfc00384:	0x6420746f
+203c6164 // bfc00388:	addi	gp,at,24932
+64723e0d // bfc0038c:	0x64723e0d
+0a206720 // bfc00390:	j	0xb8819c80
+3c616464 // bfc00394:	0x3c616464
+723e202d // bfc00398:	0x723e202d
+206a756d // bfc0039c:	addi	t2,v1,30061
+7020746f // bfc003a0:	0x7020746f
+203c6164 // bfc003a4:	addi	gp,at,24932
+64723e0d // bfc003a8:	0x64723e0d
+0a202020 // bfc003ac:	j	0xb8808080
+75736520 // bfc003b0:	jalx	0xb5cd9481
+3c455343 // bfc003b4:	0x3c455343
+3e206b65 // bfc003b8:	0x3e206b65
+7920746f // bfc003bc:	0x7920746f
+20696e74 // bfc003c0:	addi	t1,v1,28276
+65727275 // bfc003c4:	0x65727275
+70742063 // bfc003c8:	0x70742063
+75727265 // bfc003cc:	jalx	0xb5c9c995
+6e742063 // bfc003d0:	0x6e742063
+6f6d6d61 // bfc003d4:	0x6f6d6d61
+6e640d0a // bfc003d8:	0x6e640d0a
+00000000 // bfc003dc:	nop
+1000ff1c // bfc003e0:	b	0xbfc00054
+00000000 // bfc003e4:	nop
+03e04821 // bfc003e8:	move	t1,ra
+04110001 // bfc003ec:	bal	0xbfc003f4
+00000000 // bfc003f0:	nop
+27e5ff29 // bfc003f4:	addiu	a1,ra,-215
+0120f821 // bfc003f8:	move	ra,t1
+0411ff7e // bfc003fc:	bal	0xbfc001f8

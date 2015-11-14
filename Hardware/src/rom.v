@@ -34,7 +34,7 @@
 //////////////////////////////////////////////////////////////////////
 
 module rom #(
-	parameter ADDR_WIDTH = 9,
+	parameter ADDR_WIDTH = 8,
 	parameter B3_BURST   = 0
 )
 (
@@ -51,7 +51,7 @@ module rom #(
 
 reg [ADDR_WIDTH-1:0]	adr;
 
-reg [31:0] mem[0:512];
+reg [31:0] mem[0:255];
 initial $readmemh("nmon.be.10MHz.9600.txt", mem);
 
 always @ (posedge wb_clk or posedge wb_rst)
@@ -69,7 +69,7 @@ else
 	endcase
 */
 
-	wb_dat_o <= mem[adr[8:0]];
+	wb_dat_o <= mem[adr];
 
 generate
 if (B3_BURST) begin : gen_B3_BURST
