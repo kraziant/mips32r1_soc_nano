@@ -13,6 +13,7 @@ iverilog \
 	-I $SRC/verilog_utils \
 	-I $SRC/wb_intercon \
 	top.v \
+	$SRC/mips32r1_soc.v \
 	$SRC/mips32r1_wb.v \
 	$SRC/verilog-arbiter/src/arbiter.v \
 	$SRC/wb_intercon/rtl/verilog/wb_arbiter.v \
