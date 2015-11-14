@@ -1,0 +1,114 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2014 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 32-bit
+# Version 13.1.4 Build 182 03/12/2014 SJ Web Edition
+# Date created = 16:03:28  November 14, 2015
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		mips32r1-soc_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone III"
+set_global_assignment -name DEVICE EP3C10E144C8
+set_global_assignment -name TOP_LEVEL_ENTITY marsohod2
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:03:28  NOVEMBER 14, 2015"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name VERILOG_FILE ../boards/marsohod2/marsohod2.v
+set_global_assignment -name SEARCH_PATH ../boards/marsohod2/
+set_global_assignment -name QIP_FILE ../boards/marsohod2/altpll/altpll0.qip
+set_global_assignment -name SEARCH_PATH ../boards/marsohod2/altpll/
+set_global_assignment -name VERILOG_FILE ../src/mips32r1_soc.v
+set_global_assignment -name SEARCH_PATH ../src/
+set_global_assignment -name VERILOG_FILE ../src/rom.v
+set_global_assignment -name VERILOG_FILE ../src/mips32r1_wb.v
+set_global_assignment -name VERILOG_FILE "../src/verilog-arbiter/src/arbiter.v"
+set_global_assignment -name SEARCH_PATH "../src/verilog-arbiter/src/"
+set_global_assignment -name VERILOG_FILE ../src/wb_intercon/rtl/verilog/wb_arbiter.v
+set_global_assignment -name SEARCH_PATH ../src/wb_intercon/rtl/verilog/
+set_global_assignment -name VERILOG_FILE ../src/wb_intercon/rtl/verilog/wb_mux.v
+set_global_assignment -name VERILOG_FILE ../src/wb_intercon/rtl/verilog/wb_data_resize.v
+set_global_assignment -name VERILOG_FILE ../src/wb_intercon/wb_intercon.v
+set_global_assignment -name SEARCH_PATH ../src/wb_intercon/
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_defines.v"
+set_global_assignment -name SEARCH_PATH "../src/uart16550-1.5/"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/raminfr.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_sync_flops.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_regs.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_wb.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_debug_if.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_receiver.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_top.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_rfifo.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_tfifo.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_transmitter.v"
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Add.v
+set_global_assignment -name SEARCH_PATH ../src/MIPS32/
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/ALU.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Compare.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Control.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/CPZero.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Divide.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/EXMEM_Stage.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Hazard_Detection.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/IDEX_Stage.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/IFID_Stage.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/MemControl.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/MEMWB_Stage.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Mux2.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Mux4.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Processor.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/RegisterFile.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Register.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/TrapDetect.v
+set_global_assignment -name SEARCH_PATH ../src/MIPS32
+set_global_assignment -name SEARCH_PATH "../src/uart16550-1.5"
+set_global_assignment -name SEARCH_PATH ../src/verilog_utils
+set_global_assignment -name SEARCH_PATH ../src/wb_intercon
+set_global_assignment -name FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS ON
+set_location_assignment PIN_25 -to CLK100MHZ
+set_location_assignment PIN_79 -to LED[3]
+set_location_assignment PIN_83 -to LED[2]
+set_location_assignment PIN_84 -to LED[1]
+set_location_assignment PIN_85 -to LED[0]
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_location_assignment PIN_101 -to IO[0]
+set_location_assignment PIN_103 -to IO[1]
+set_location_assignment PIN_104 -to IO[2]
+set_location_assignment PIN_105 -to IO[3]
+set_location_assignment PIN_106 -to IO[4]
+set_location_assignment PIN_110 -to IO[5]
+set_location_assignment PIN_111 -to IO[6]
+set_location_assignment PIN_112 -to IO[7]
+set_location_assignment PIN_24 -to FTDI_BD0
+set_location_assignment PIN_28 -to FTDI_BD1
+set_location_assignment PIN_11 -to FTDI_BD2
+set_location_assignment PIN_10 -to FTDI_BD3

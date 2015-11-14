@@ -1,0 +1,139 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, the Altera Quartus II License Agreement,
+# the Altera MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Altera and sold by Altera or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
+# Date created = 16:03:11  November 14, 2015
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		mips32r1-soc_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX 10"
+set_global_assignment -name DEVICE 10M50SAE144C8GES
+set_global_assignment -name TOP_LEVEL_ENTITY marsohod3
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 15.0.2
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:03:11  NOVEMBER 14, 2015"
+set_global_assignment -name LAST_QUARTUS_VERSION 15.0.2
+set_global_assignment -name VERILOG_FILE ../boards/marsohod3/marsohod3.v
+set_global_assignment -name SEARCH_PATH ../boards/marsohod3/
+set_global_assignment -name QIP_FILE ../boards/marsohod3/altpll/altpll0.qip
+set_global_assignment -name SEARCH_PATH ../boards/marsohod3/altpll/
+set_global_assignment -name SDC_FILE ../boards/marsohod3/marsohod3.sdc
+set_global_assignment -name VERILOG_FILE ../src/mips32r1_soc.v
+set_global_assignment -name SEARCH_PATH ../src/
+set_global_assignment -name VERILOG_FILE ../src/rom.v
+set_global_assignment -name VERILOG_FILE ../src/mips32r1_wb.v
+set_global_assignment -name VERILOG_FILE "../src/verilog-arbiter/src/arbiter.v"
+set_global_assignment -name SEARCH_PATH "../src/verilog-arbiter/src/"
+set_global_assignment -name VERILOG_FILE ../src/wb_intercon/rtl/verilog/wb_arbiter.v
+set_global_assignment -name SEARCH_PATH ../src/wb_intercon/rtl/verilog/
+set_global_assignment -name VERILOG_FILE ../src/wb_intercon/rtl/verilog/wb_mux.v
+set_global_assignment -name VERILOG_FILE ../src/wb_intercon/rtl/verilog/wb_data_resize.v
+set_global_assignment -name VERILOG_FILE ../src/wb_intercon/wb_intercon.v
+set_global_assignment -name SEARCH_PATH ../src/wb_intercon/
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_defines.v"
+set_global_assignment -name SEARCH_PATH "../src/uart16550-1.5/"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/raminfr.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_sync_flops.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_regs.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_wb.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_debug_if.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_receiver.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_top.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_rfifo.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_tfifo.v"
+set_global_assignment -name VERILOG_FILE "../src/uart16550-1.5/uart_transmitter.v"
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Add.v
+set_global_assignment -name SEARCH_PATH ../src/MIPS32/
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/ALU.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Compare.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Control.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/CPZero.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Divide.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/EXMEM_Stage.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Hazard_Detection.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/IDEX_Stage.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/IFID_Stage.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/MemControl.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/MEMWB_Stage.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Mux2.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Mux4.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Processor.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/RegisterFile.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/Register.v
+set_global_assignment -name VERILOG_FILE ../src/MIPS32/TrapDetect.v
+set_global_assignment -name SEARCH_PATH ../src/MIPS32
+set_global_assignment -name SEARCH_PATH "../src/uart16550-1.5"
+set_global_assignment -name SEARCH_PATH ../src/verilog_utils
+set_global_assignment -name SEARCH_PATH ../src/wb_intercon
+set_global_assignment -name FLOW_ENABLE_POWER_ANALYZER OFF
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS ON
+set_location_assignment PIN_26 -to CLK100MHZ
+set_location_assignment PIN_25 -to KEY1
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to KEY1
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_location_assignment PIN_81 -to LED[7]
+set_location_assignment PIN_82 -to LED[6]
+set_location_assignment PIN_83 -to LED[5]
+set_location_assignment PIN_84 -to LED[4]
+set_location_assignment PIN_85 -to LED[3]
+set_location_assignment PIN_86 -to LED[2]
+set_location_assignment PIN_87 -to LED[1]
+set_location_assignment PIN_88 -to LED[0]
+set_location_assignment PIN_89 -to IO[0]
+set_location_assignment PIN_90 -to IO[1]
+set_location_assignment PIN_91 -to IO[2]
+set_location_assignment PIN_92 -to IO[3]
+set_location_assignment PIN_93 -to IO[4]
+set_location_assignment PIN_96 -to IO[5]
+set_location_assignment PIN_97 -to IO[6]
+set_location_assignment PIN_98 -to IO[7]
+set_location_assignment PIN_141 -to FTDI_BD0
+set_location_assignment PIN_140 -to FTDI_BD1
+set_location_assignment PIN_138 -to FTDI_BD2
+set_location_assignment PIN_136 -to FTDI_BD3
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name VCCA_USER_VOLTAGE 3.3V
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE BALANCED
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
+set_global_assignment -name SYNCHRONIZER_IDENTIFICATION OFF
+set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
