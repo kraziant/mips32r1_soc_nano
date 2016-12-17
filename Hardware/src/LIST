@@ -1,6 +1,6 @@
 mips32r1_soc.v
-rom.v
 mips32r1_wb.v
+or1k_bootloaders-0.9/wb_bootrom.v
 verilog-arbiter/src/arbiter.v
 wb_intercon/rtl/verilog/wb_arbiter.v
 wb_intercon/rtl/verilog/wb_mux.v

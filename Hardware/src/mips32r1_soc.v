@@ -16,14 +16,17 @@ module mips32r1_soc #(
 
 `include "wb_intercon.vh"
 
-	rom #(
+localparam WB_BOOTROM_MEM_DEPTH = 1024;
+
+	wb_bootrom #(
+		.DEPTH (WB_BOOTROM_MEM_DEPTH),
 		.MEMFILE (MEMFILE)
 	)
 	bootrom(
-		.wb_clk(wb_clk),
-		.wb_rst(wb_rst),
+		.wb_clk_i(wb_clk),
+		.wb_rst_i(wb_rst),
 
-		.wb_adr_i(wb_m2s_rom0_adr[10:2]),
+		.wb_adr_i(wb_m2s_rom0_adr),
 		.wb_stb_i(wb_m2s_rom0_stb),
 		.wb_cyc_i(wb_m2s_rom0_cyc),
 		.wb_dat_o(wb_s2m_rom0_dat),

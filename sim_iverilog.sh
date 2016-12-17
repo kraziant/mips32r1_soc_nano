@@ -22,7 +22,7 @@ iverilog \
 	$SRC/wb_intercon/rtl/verilog/wb_mux.v \
 	$SRC/wb_intercon/rtl/verilog/wb_data_resize.v \
 	$SRC/wb_intercon/wb_intercon.v \
-	$SRC/rom.v \
+	$SRC/or1k_bootloaders-0.9/wb_bootrom.v \
 	$UART/raminfr.v \
 	$UART/uart_debug_if.v \
 	$UART/uart_defines.v \
