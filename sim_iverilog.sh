@@ -2,11 +2,13 @@
 
 SRC=$(pwd)/Hardware/src
 
+UART=$SRC/uart16550-1.5.1/rtl/verilog
+
 cd testbench
 iverilog \
 	-g2001 \
 	-I $SRC/MIPS32 \
-	-I $SRC/uart16550-1.5 \
+	-I $UART \
 	-DPRESCALER_PRESET_HARD \
 	-DPRESCALER_HIGH_PRESET=0 \
 	-DPRESCALER_LOW_PRESET=2 \
@@ -21,17 +23,17 @@ iverilog \
 	$SRC/wb_intercon/rtl/verilog/wb_data_resize.v \
 	$SRC/wb_intercon/wb_intercon.v \
 	$SRC/rom.v \
-	$SRC/uart16550-1.5/uart_defines.v \
-	$SRC/uart16550-1.5/raminfr.v \
-	$SRC/uart16550-1.5/uart_sync_flops.v \
-	$SRC/uart16550-1.5/uart_regs.v \
-	$SRC/uart16550-1.5/uart_wb.v \
-	$SRC/uart16550-1.5/uart_debug_if.v \
-	$SRC/uart16550-1.5/uart_receiver.v \
-	$SRC/uart16550-1.5/uart_top.v \
-	$SRC/uart16550-1.5/uart_rfifo.v \
-	$SRC/uart16550-1.5/uart_tfifo.v \
-	$SRC/uart16550-1.5/uart_transmitter.v \
+	$UART/raminfr.v \
+	$UART/uart_debug_if.v \
+	$UART/uart_defines.v \
+	$UART/uart_receiver.v \
+	$UART/uart_regs.v \
+	$UART/uart_rfifo.v \
+	$UART/uart_sync_flops.v \
+	$UART/uart_tfifo.v \
+	$UART/uart_top.v \
+	$UART/uart_transmitter.v \
+	$UART/uart_wb.v \
 	$SRC/MIPS32/Add.v \
 	$SRC/MIPS32/ALU.v \
 	$SRC/MIPS32/Compare.v \
