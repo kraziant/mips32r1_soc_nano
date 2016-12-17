@@ -44,7 +44,10 @@ module marsohod2(
 	assign LED[0] = my_reset;
 	reset mreset(slow_clock, my_reset);
 
-	mips32r1_soc soc(
+	mips32r1_soc #(
+		.MEMFILE ("nmon.be.10MHz.9600.txt")
+	)
+	soc(
 		.clock(clk10m),
 		.reset(my_reset),
 		.wb_iadr_o(),

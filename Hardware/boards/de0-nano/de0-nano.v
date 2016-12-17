@@ -50,7 +50,10 @@ module de0_nano(
 
 	wire [31:0] wb_iadr_o;
 
-	mips32r1_soc soc(
+	mips32r1_soc #(
+		.MEMFILE ("nmon.be.10MHz.9600.txt")
+	)
+	soc(
 		.clock(clk10m),
 		.reset(my_reset),
 		.wb_iadr_o(wb_iadr_o),

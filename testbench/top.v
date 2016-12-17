@@ -24,7 +24,10 @@ module Top;
 		$dumpvars(0, Top);
 	end
 
-	mips32r1_soc soc(
+	mips32r1_soc #(
+		.MEMFILE ("nmon.be.10MHz.9600.txt")
+	)
+	soc (
 		.clock(clk),
 		.reset(reset)
 	);

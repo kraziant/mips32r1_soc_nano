@@ -35,7 +35,8 @@
 
 module rom #(
 	parameter ADDR_WIDTH = 8,
-	parameter B3_BURST   = 0
+	parameter B3_BURST   = 0,
+	parameter MEMFILE    = "" // Initialization file
 )
 (
 	input					wb_clk,
@@ -52,7 +53,7 @@ module rom #(
 reg [ADDR_WIDTH-1:0]	adr;
 
 reg [31:0] mem[0:255];
-initial $readmemh("nmon.be.10MHz.9600.txt", mem);
+initial $readmemh(MEMFILE, mem);
 
 always @ (posedge wb_clk or posedge wb_rst)
 if (wb_rst)

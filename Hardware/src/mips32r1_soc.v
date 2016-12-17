@@ -1,4 +1,7 @@
-module mips32r1_soc(
+module mips32r1_soc #(
+	parameter MEMFILE = ""
+	)
+	(
 	input  clock,
 	input  reset,
 	output [31:0] wb_iadr_o,
@@ -13,7 +16,10 @@ module mips32r1_soc(
 
 `include "wb_intercon.vh"
 
-	rom bootrom(
+	rom #(
+		.MEMFILE (MEMFILE)
+	)
+	bootrom(
 		.wb_clk(wb_clk),
 		.wb_rst(wb_rst),
 
