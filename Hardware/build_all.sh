@@ -41,7 +41,7 @@ report_board "proj-$QUARTUS_NAME-de0-nano" 19 >> $REPORT
 report_board "proj-$QUARTUS_NAME-de1-soc" 22 >> $REPORT
 report_board "proj-$QUARTUS_NAME-marsohod2" 19 >> $REPORT
 
-QV=15.0
+QV=16.0
 export PATH=$SAVE_PATH:/opt/altera/$QV/quartus/bin
 QUARTUS_NAME=q$QV
 
