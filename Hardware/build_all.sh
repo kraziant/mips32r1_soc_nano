@@ -18,8 +18,9 @@ report_board()
 SAVE_PATH=$PATH
 set -e
 
-export PATH=$SAVE_PATH:/opt/altera/13.1/quartus/bin
-QUARTUS_NAME=q13.1
+QV=13.1
+export PATH=$SAVE_PATH:/opt/altera/$QV/quartus/bin
+QUARTUS_NAME=q$QV
 
 for BOARD in de0-nano de1-soc marsohod2; do
 	PROJ="proj-$QUARTUS_NAME-$BOARD"
@@ -40,8 +41,9 @@ report_board "proj-$QUARTUS_NAME-de0-nano" 19 >> $REPORT
 report_board "proj-$QUARTUS_NAME-de1-soc" 22 >> $REPORT
 report_board "proj-$QUARTUS_NAME-marsohod2" 19 >> $REPORT
 
-export PATH=$SAVE_PATH:/opt/altera/15.0/quartus/bin
-QUARTUS_NAME=q15.0
+QV=15.0
+export PATH=$SAVE_PATH:/opt/altera/$QV/quartus/bin
+QUARTUS_NAME=q$QV
 
 for BOARD in de0-nano de1-soc marsohod3; do
 	PROJ="proj-$QUARTUS_NAME-$BOARD"
